@@ -1,4 +1,4 @@
-import igv, { ReferenceGenome } from 'igv/dist/igv.esm.js';
+import igv, { ReferenceGenome } from 'igv';
 
 
 function mkDiv(heading: string) {

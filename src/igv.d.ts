@@ -1,5 +1,4 @@
-
-declare module 'igv/dist/igv.esm.js' {
+declare module 'igv' {
     interface GenomeFrag {
         genome: string;
         reference?: never;

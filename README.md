@@ -37,6 +37,13 @@ npm install
 npm run build
 ```
 
+To start dev server, run:
+
+```bash
+npm install
+npm run dev
+```
+
 then start a web server in the project root directory and open `index.html` in a browser.
 
 Here's a hosted version of the demo:
