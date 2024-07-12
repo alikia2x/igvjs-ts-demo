@@ -1,13 +1,16 @@
 import igv, { ReferenceGenome } from 'igv';
 
+// give a visual indication on browser
+//  that we got the right object
+console.log(igv);
 
 function mkDiv(heading: string) {
-    const h1 = document.createElement('h1');
-    h1.textContent = heading;
-    document.body.appendChild(h1);
-    const div = document.createElement('div');
-    document.body.appendChild(div);
-    return div;
+  const h1 = document.createElement('h1');
+  h1.textContent = heading;
+  document.body.appendChild(h1);
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  return div;
 }
 
 // Object literal may only specify known properties, and 'oops' does not exist in type 'CreateOpt'.ts(2353)
@@ -26,11 +29,11 @@ igv.createBrowser(mkDiv("Genome via 'genome'"), { genome: 'hg19' });
 // https://github.com/igvteam/igv.js/blob/master/test/data/genomes/altGenomes.json
 // Explicitly declare type to assert that it is correct
 const refGenome: ReferenceGenome = {
-    id: "_dm6",
-    name: "D. melanogaster (dm6)",
-    fastaURL: 'https://s3.dualstack.us-east-1.amazonaws.com/igv.broadinstitute.org/genomes/seq/dm6/dm6.fa',
-    indexURL: 'https://s3.dualstack.us-east-1.amazonaws.com/igv.broadinstitute.org/genomes/seq/dm6/dm6.fa.fai',
-    cytobandURL: "https://s3.dualstack.us-east-1.amazonaws.com/igv.org.genomes/dm6/cytoBandIdeo.txt.gz",
+  id: "_dm6",
+  name: "D. melanogaster (dm6)",
+  fastaURL: 'https://s3.dualstack.us-east-1.amazonaws.com/igv.broadinstitute.org/genomes/seq/dm6/dm6.fa',
+  indexURL: 'https://s3.dualstack.us-east-1.amazonaws.com/igv.broadinstitute.org/genomes/seq/dm6/dm6.fa.fai',
+  cytobandURL: "https://s3.dualstack.us-east-1.amazonaws.com/igv.org.genomes/dm6/cytoBandIdeo.txt.gz",
 };
 
 // Also correct
@@ -70,18 +73,18 @@ igv.createBrowser(mkDiv("Extra config keys - casted"), cOptWithExtraKey);
 // ==========  Browser Class  ==========
 
 ~async function () {
-    const browser = await igv.createBrowser(mkDiv("Using Browser API"), { genome: 'hg19' });
+  const browser = await igv.createBrowser(mkDiv("Using Browser API"), { genome: 'hg19' });
 
-    // Property 'oops' does not exist on type 'Browser'.ts(2339)
-    // @ts-expect-error
-    browser.oops = 'oops';
+  // Property 'oops' does not exist on type 'Browser'.ts(2339)
+  // @ts-expect-error
+  browser.oops = 'oops';
 
-    // Correct
-    browser.toSVG();
+  // Correct
+  browser.toSVG();
 
-    // Expected 0 arguments, but got 1.ts(2554)
-    // @ts-expect-error
-    browser.toSVG("is there an argument here?");
+  // Expected 0 arguments, but got 1.ts(2554)
+  // @ts-expect-error
+  browser.toSVG("is there an argument here?");
 
-    // ===========  /  ===========
+  // ===========  /  ===========
 }();

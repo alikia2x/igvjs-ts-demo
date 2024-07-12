@@ -18,7 +18,7 @@
         "vite-plugin-singlefile": "^2.0.2"
     },
     "dependencies": {
-        "igv": "^2.15.13",
+        "igv": "file:../igv.js",
         "vite": "^5.3.3"
     }
 }
