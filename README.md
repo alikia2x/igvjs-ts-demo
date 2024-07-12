@@ -29,4 +29,15 @@ Type 'number' is not assignable to type 'string'.ts(2322)
 
 These are much more helpful.
 
+
+To build the project, run:
+
+```bash
+npm install
+npm run build
+```
+
+then start a web server in the project root directory and open `index.html` in a browser.
+
+Here's a hosted version of the demo:
 [Try it out](https://blob.yumechi.jp/pub/igvjs-ts-demo/index.html)
