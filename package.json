@@ -4,8 +4,9 @@
     "description": "",
     "main": "index.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
+        "build": "vite build",
+        "preview": "vite preview",
+        "dev": "vite dev"
     },
     "keywords": [],
     "author": "",
@@ -18,6 +19,7 @@
         "webpack-cli": "^5.1.4"
     },
     "dependencies": {
-        "igv": "^2.15.13"
+        "igv": "^2.15.13",
+        "vite": "^5.3.3"
     }
 }
